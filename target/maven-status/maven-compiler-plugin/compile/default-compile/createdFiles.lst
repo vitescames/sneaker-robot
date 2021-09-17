@@ -1,0 +1,17 @@
+br\com\robo\adapters\dataprovider\RetiraElementosObscurersService.class
+br\com\robo\adapters\dataprovider\ProcuraBotaoComprarService.class
+br\com\robo\adapters\entrypoint\starters\MainStarter.class
+br\com\robo\usecases\ProcuraBotaoComprar.class
+br\com\robo\adapters\entrypoint\controllers\ControllerInterface.class
+br\com\robo\adapters\dataprovider\AbreSiteService.class
+br\com\robo\usecases\ExecutaRoboArtwalk.class
+br\com\robo\adapters\dataprovider\ArtwalkGatewayImpl.class
+br\com\robo\adapters\dataprovider\NikeGatewayImpl.class
+br\com\robo\config\SpringConfig.class
+br\com\robo\adapters\entrypoint\controllers\RoboArtwalkController.class
+br\com\robo\adapters\dataprovider\IdentificaBotaoCompraService.class
+br\com\robo\adapters\dataprovider\SelecionaTamanhoECompraService.class
+br\com\robo\usecases\ports\ArtwalkWebPageGateway.class
+br\com\robo\usecases\ports\ProcuraBotaoComprarCommand.class
+br\com\robo\adapters\entrypoint\validators\ValidadorDeSite.class
+br\com\robo\usecases\ports\ExecutaRoboArtwalkCommand.class
