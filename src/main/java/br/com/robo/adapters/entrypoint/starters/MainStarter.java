@@ -1,5 +1,6 @@
 package br.com.robo.adapters.entrypoint.starters;
 
+import br.com.robo.adapters.entrypoint.config.ControllerConfig;
 import br.com.robo.adapters.entrypoint.controllers.ControllerInterface;
 import br.com.robo.adapters.entrypoint.utils.MapeadorDeParams;
 import br.com.robo.adapters.entrypoint.utils.ValidadorDeSite;
@@ -23,7 +24,7 @@ public class MainStarter implements CommandLineRunner {
     private ControllerInterface controllerInterface;
 
     @Autowired
-    private BeanFactory beanFactory;
+    private ControllerConfig config;
 
     @Value("${url}")
     private String url;
@@ -38,7 +39,7 @@ public class MainStarter implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         try{
-            controllerInterface = beanFactory.getBean(ValidadorDeSite.getRoboController(url), ControllerInterface.class);
+            controllerInterface = config.retornaController(url);
             controllerInterface.execute(MapeadorDeParams.execute(url, email));
         } catch (Exception e){
             e.printStackTrace();

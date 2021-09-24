@@ -2,6 +2,7 @@ package br.com.robo.config;
 
 import br.com.robo.adapters.dataprovider.*;
 import br.com.robo.adapters.dataprovider.service.*;
+import br.com.robo.adapters.entrypoint.config.ControllerConfig;
 import br.com.robo.adapters.entrypoint.controllers.ControllerInterface;
 import br.com.robo.adapters.entrypoint.controllers.RoboArtwalkController;
 import br.com.robo.usecases.ExecutaRoboArtwalk;
@@ -20,6 +21,11 @@ public class SpringConfig {
 
     @Value("${driver.location}")
     private String driverLocation;
+
+    @Bean
+    public ControllerConfig controllerConfig(){
+        return new ControllerConfig();
+    }
 
     @Bean
     public ExecutaRoboArtwalkCommand abreSiteCommand() {
