@@ -1,5 +1,7 @@
 package br.com.robo.adapters.dataprovider.service;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -10,7 +12,11 @@ import java.util.List;
 
 public class SelecionaTamanhoEVaiCarrinhoService {
 
+    private static final Logger logger = LogManager.getLogger(IdentificaBotaoCompraService.class);
+
     public List<WebElement> selecionaTamanhoEVaiCarrinho(WebDriver webDriver, List<WebElement> elementCompra){
+
+        logger.warn("Selecionando tamanho...");
 
         List<WebElement> tamanho = webDriver.findElements(By.xpath("//button[contains(@title,'40')]"));
 
@@ -28,6 +34,8 @@ public class SelecionaTamanhoEVaiCarrinhoService {
         tamanho.get(0).click();
 
         elementCompra.get(0).click();
+
+        logger.warn("Indo pro carrinho...");
 
         if(botaoDefault){
             WebDriverWait wait = new WebDriverWait(webDriver, 3000);

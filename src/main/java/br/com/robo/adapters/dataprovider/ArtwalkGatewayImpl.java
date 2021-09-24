@@ -31,6 +31,9 @@ public class ArtwalkGatewayImpl implements ArtwalkWebPageGateway {
     @Autowired
     private FechaPedidoESetaEmailService fechaPedidoESetaEmailService;
 
+    @Autowired
+    private SetaInformacoesService setaInformacoesService;
+
     private WebDriver webDriver;
 
     @Override
@@ -47,6 +50,8 @@ public class ArtwalkGatewayImpl implements ArtwalkWebPageGateway {
         selecionaTamanhoECompraService.selecionaTamanhoEVaiCarrinho(webDriver, botaoCompra);
 
         fechaPedidoESetaEmailService.fechaPedidoESetaEmail(webDriver, params.get("email"));
+
+        setaInformacoesService.setaInformacoes(webDriver, params);
 
     }
 

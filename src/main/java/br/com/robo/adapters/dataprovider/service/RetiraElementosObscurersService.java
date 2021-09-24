@@ -1,52 +1,74 @@
 package br.com.robo.adapters.dataprovider.service;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.apache.commons.io.FileUtils;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.io.File;
 import java.util.List;
 
 public class RetiraElementosObscurersService {
 
+    private static final Logger logger = LogManager.getLogger(IdentificaBotaoCompraService.class);
+
     public WebDriver retiraElementos(WebDriver webDriver){
 
-        List<WebElement> elementObscure = webDriver.findElements(By.className("shoppush-prompt-close"));
-        WebDriverWait wait = null;
+        try {
 
-        if(!elementObscure.isEmpty()) {
+            logger.warn("Retirando elementos da frente...");
 
-            wait = new WebDriverWait(webDriver, 20);
-            wait.until(ExpectedConditions.visibilityOf(elementObscure.get(0)));
-            elementObscure.get(0).click();
-        }
+            TakesScreenshot shot = (TakesScreenshot) webDriver;
 
-        elementObscure = webDriver.findElements(By.className("acept-close"));
+            WebDriverWait wait = new WebDriverWait(webDriver, 3000);
+            wait.until(ExpectedConditions.elementToBeClickable(By.className("shoppush-prompt-close")));
 
-        if(!elementObscure.isEmpty()) {
+            File srcFile = shot.getScreenshotAs(OutputType.FILE);
 
-            wait = new WebDriverWait(webDriver, 20);
-            wait.until(ExpectedConditions.visibilityOf(elementObscure.get(0)));
-            elementObscure.get(0).click();
-        }
+            File destFile = new File("C:\\Users\\vitho\\Documents\\site_aberto.jpg");
 
-        elementObscure = webDriver.findElements(By.id("ModalAlterarLocalizacaoFechar"));
+            FileUtils.copyFile(srcFile, destFile);
 
-        if(!elementObscure.isEmpty()) {
+            List<WebElement> elementObscure = webDriver.findElements(By.className("shoppush-prompt-close"));
 
-            wait = new WebDriverWait(webDriver, 20);
-            wait.until(ExpectedConditions.visibilityOf(elementObscure.get(0)));
-            elementObscure.get(0).click();
-        }
+            if (!elementObscure.isEmpty()) {
+                elementObscure.get(0).click();
+            }
 
-        elementObscure = webDriver.findElements(By.className("shoppush-prompt-btn"));
+            elementObscure = webDriver.findElements(By.className("acept-close"));
 
-        if(!elementObscure.isEmpty()) {
+            if (!elementObscure.isEmpty()) {
 
-            wait = new WebDriverWait(webDriver, 20);
-            wait.until(ExpectedConditions.visibilityOf(elementObscure.get(0)));
-            elementObscure.get(0).click();
+                wait = new WebDriverWait(webDriver, 20);
+                wait.until(ExpectedConditions.visibilityOf(elementObscure.get(0)));
+                elementObscure.get(0).click();
+            }
+
+            elementObscure = webDriver.findElements(By.id("ModalAlterarLocalizacaoFechar"));
+
+            if (!elementObscure.isEmpty()) {
+                elementObscure.get(0).click();
+            }
+
+            elementObscure = webDriver.findElements(By.className("shoppush-prompt-btn"));
+
+            if (!elementObscure.isEmpty()) {
+
+                wait = new WebDriverWait(webDriver, 20);
+                wait.until(ExpectedConditions.visibilityOf(elementObscure.get(0)));
+                elementObscure.get(0).click();
+            }
+
+            srcFile = shot.getScreenshotAs(OutputType.FILE);
+
+            destFile = new File("C:\\Users\\vitho\\Documents\\elementos_retirados.jpg");
+
+            FileUtils.copyFile(srcFile, destFile);
+
+        } catch (Exception e){
+            e.printStackTrace();
         }
 
         return webDriver;

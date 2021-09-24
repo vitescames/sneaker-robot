@@ -1,29 +1,57 @@
 package br.com.robo.adapters.dataprovider.service;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.apache.commons.io.FileUtils;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.io.File;
 import java.util.List;
 
 public class FechaPedidoESetaEmailService {
 
+    private static final Logger logger = LogManager.getLogger(IdentificaBotaoCompraService.class);
+
     public WebDriver fechaPedidoESetaEmail(WebDriver webDriver, String email){
 
-        List<WebElement> botaoFecharPedido = webDriver.findElements(By.id("cart-to-orderform"));
+        try {
 
-        botaoFecharPedido.get(0).click();
+            logger.warn("Fechando pedido...");
 
-        WebDriverWait wait = new WebDriverWait(webDriver, 3000);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("client-pre-email")));
+            WebDriverWait wait = new WebDriverWait(webDriver, 5000);
+            wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.cssSelector("form[class*='form-page client-pre-email anim-death anim-current']")));
 
-        webDriver.findElement(By.id("client-pre-email")).sendKeys(email);
+            JavascriptExecutor js = (JavascriptExecutor) webDriver;
 
-        webDriver.findElement(By.id("btn-client-pre-email")).click();
+            wait.until(ExpectedConditions.elementToBeClickable(By.id("cart-to-orderform")));
 
-        return webDriver;
+            js.executeScript("document.getElementsByClassName('form-page client-pre-email anim-death anim-current')[0].style.display='none';");
+
+            List<WebElement> botaoFecharPedido = webDriver.findElements(By.id("cart-to-orderform"));
+
+            botaoFecharPedido.get(0).click();
+
+            wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("client-email")));
+
+            webDriver.findElement(By.id("client-email")).sendKeys(email);
+
+            TakesScreenshot shot = (TakesScreenshot) webDriver;
+
+            File srcFile = shot.getScreenshotAs(OutputType.FILE);
+
+            File destFile = new File("C:\\Users\\vitho\\Documents\\fechando_pedido.jpg");
+
+            FileUtils.copyFile(srcFile, destFile);
+
+            return webDriver;
+
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+
+        return null;
 
     }
 

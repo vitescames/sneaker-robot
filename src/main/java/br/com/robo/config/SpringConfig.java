@@ -51,13 +51,19 @@ public class SpringConfig {
         return new SelecionaTamanhoEVaiCarrinhoService();
     }
 
-    @Bean public FechaPedidoESetaEmailService fechaPedidoESetaEmailService(){
+    @Bean
+    public FechaPedidoESetaEmailService fechaPedidoESetaEmailService(){
         return new FechaPedidoESetaEmailService();
     }
 
     @Bean
     public RetiraElementosObscurersService retiraElementosObscurersService(){
         return new RetiraElementosObscurersService();
+    }
+
+    @Bean
+    public SetaInformacoesService setaInformacoesService(){
+        return new SetaInformacoesService();
     }
 
     @Bean
