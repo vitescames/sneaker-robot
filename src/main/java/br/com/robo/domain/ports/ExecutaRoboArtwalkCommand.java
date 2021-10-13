@@ -1,7 +1,6 @@
-package br.com.robo.usecases.ports;
+package br.com.robo.domain.ports;
 
 import java.util.HashMap;
-import java.util.Properties;
 
 public interface ExecutaRoboArtwalkCommand {
 

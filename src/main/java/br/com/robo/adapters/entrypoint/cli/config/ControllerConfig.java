@@ -1,12 +1,13 @@
-package br.com.robo.adapters.entrypoint.config;
+package br.com.robo.adapters.entrypoint.cli.config;
 
 import br.com.robo.adapters.entrypoint.controllers.ControllerInterface;
 import br.com.robo.adapters.entrypoint.utils.ValidadorDeSite;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Component;
 
-@Configuration
+@Component
 public class ControllerConfig {
 
     @Autowired

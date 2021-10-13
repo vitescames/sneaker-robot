@@ -1,15 +1,11 @@
-package br.com.robo.config;
+package br.com.robo.adapters.dataprovider.config;
 
-import br.com.robo.adapters.dataprovider.*;
+
+import br.com.robo.adapters.dataprovider.ArtwalkGatewayImpl;
 import br.com.robo.adapters.dataprovider.service.*;
-import br.com.robo.adapters.entrypoint.config.ControllerConfig;
-import br.com.robo.adapters.entrypoint.controllers.ControllerInterface;
-import br.com.robo.adapters.entrypoint.controllers.RoboArtwalkController;
-import br.com.robo.usecases.ExecutaRoboArtwalk;
-import br.com.robo.usecases.ProcuraBotaoComprar;
-import br.com.robo.usecases.ports.ExecutaRoboArtwalkCommand;
-import br.com.robo.usecases.ports.ArtwalkWebPageGateway;
-import br.com.robo.usecases.ports.ProcuraBotaoComprarCommand;
+import br.com.robo.domain.usecases.ProcuraBotaoComprar;
+import br.com.robo.domain.ports.ArtwalkWebPageGateway;
+import br.com.robo.domain.ports.ProcuraBotaoComprarCommand;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -17,30 +13,10 @@ import org.springframework.context.annotation.Configuration;
 import javax.annotation.PostConstruct;
 
 @Configuration
-public class SpringConfig {
+public class BeanConfig {
 
     @Value("${driver.location}")
     private String driverLocation;
-
-    @Bean
-    public ControllerConfig controllerConfig(){
-        return new ControllerConfig();
-    }
-
-    @Bean
-    public ExecutaRoboArtwalkCommand abreSiteCommand() {
-        return new ExecutaRoboArtwalk();
-    }
-
-    @Bean
-    public ArtwalkWebPageGateway webPageGateway() {
-        return new ArtwalkGatewayImpl();
-    }
-
-    @Bean("artwalk")
-    public ControllerInterface artwalkController() {
-        return new RoboArtwalkController();
-    }
 
     @Bean
     public AbreSiteService abreSiteService(){
@@ -70,11 +46,6 @@ public class SpringConfig {
     @Bean
     public SetaInformacoesService setaInformacoesService(){
         return new SetaInformacoesService();
-    }
-
-    @Bean
-    public ProcuraBotaoComprarService procuraBotaoComprarService(){
-        return new ProcuraBotaoComprarService();
     }
 
     @Bean

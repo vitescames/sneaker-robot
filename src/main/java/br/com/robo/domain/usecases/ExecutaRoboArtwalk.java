@@ -1,7 +1,7 @@
-package br.com.robo.usecases;
+package br.com.robo.domain.usecases;
 
-import br.com.robo.usecases.ports.ExecutaRoboArtwalkCommand;
-import br.com.robo.usecases.ports.ArtwalkWebPageGateway;
+import br.com.robo.domain.ports.ArtwalkWebPageGateway;
+import br.com.robo.domain.ports.ExecutaRoboArtwalkCommand;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

@@ -1,7 +1,7 @@
 package br.com.robo.adapters.entrypoint.controllers;
 
-import br.com.robo.usecases.ports.ExecutaRoboArtwalkCommand;
-import br.com.robo.usecases.ports.ProcuraBotaoComprarCommand;
+import br.com.robo.domain.ports.ExecutaRoboArtwalkCommand;
+import br.com.robo.domain.ports.ProcuraBotaoComprarCommand;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 

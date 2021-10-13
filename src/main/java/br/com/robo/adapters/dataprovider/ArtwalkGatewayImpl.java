@@ -1,7 +1,7 @@
 package br.com.robo.adapters.dataprovider;
 
 import br.com.robo.adapters.dataprovider.service.*;
-import br.com.robo.usecases.ports.ArtwalkWebPageGateway;
+import br.com.robo.domain.ports.ArtwalkWebPageGateway;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.springframework.beans.factory.annotation.Autowired;

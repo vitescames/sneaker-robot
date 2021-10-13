@@ -1,36 +1,31 @@
-package br.com.robo.adapters.entrypoint.starters;
+package br.com.robo.adapters.entrypoint.cli;
 
-import br.com.robo.adapters.entrypoint.config.ControllerConfig;
+import br.com.robo.adapters.entrypoint.cli.config.ControllerConfig;
+import br.com.robo.adapters.entrypoint.cli.config.ParamsConfig;
 import br.com.robo.adapters.entrypoint.controllers.ControllerInterface;
-import br.com.robo.adapters.entrypoint.utils.MapeadorDeParams;
-import br.com.robo.adapters.entrypoint.utils.ValidadorDeSite;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
+import java.util.HashMap;
+
 @SpringBootApplication
-@ComponentScan("br.com.robo.config")
+@ComponentScan("br.com.robo")
 public class MainStarter implements CommandLineRunner {
 
     private static final Logger logger = LogManager.getLogger(MainStarter.class);
 
-    @Autowired
     private ControllerInterface controllerInterface;
 
     @Autowired
-    private ControllerConfig config;
+    private ControllerConfig controllerConfig;
 
-    @Value("${url}")
-    private String url;
-
-    @Value("${email}")
-    private String email;
+    @Autowired
+    private ParamsConfig paramsConfig;
 
     public static void main(String[] args) {
         SpringApplication.run(MainStarter.class, args);
@@ -38,9 +33,12 @@ public class MainStarter implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
+
+        HashMap<String, String> params = paramsConfig.execute();
+
         try{
-            controllerInterface = config.retornaController(url);
-            controllerInterface.execute(MapeadorDeParams.execute(url, email));
+            controllerInterface = controllerConfig.retornaController(params.get("url"));
+            controllerInterface.execute(params);
         } catch (Exception e){
             e.printStackTrace();
         }
