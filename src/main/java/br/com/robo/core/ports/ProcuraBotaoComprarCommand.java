@@ -1,4 +1,4 @@
-package br.com.robo.domain.ports;
+package br.com.robo.core.ports;
 
 public interface ProcuraBotaoComprarCommand {
 

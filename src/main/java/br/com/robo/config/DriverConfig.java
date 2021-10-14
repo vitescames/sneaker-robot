@@ -1,4 +1,4 @@
-package br.com.robo.external.dataprovider;
+package br.com.robo.config;
 
 
 import org.springframework.beans.factory.annotation.Value;

@@ -73,7 +73,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>br.com.robo.external.entrypoint.cli.MainStarter</mainClass>
+                    <mainClass>br.com.robo.application.cli.MainStarter</mainClass>
                 </configuration>
             </plugin>
         </plugins>

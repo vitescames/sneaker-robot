@@ -1,7 +1,7 @@
 package br.com.robo.adapters.entrypoint;
 
-import br.com.robo.domain.ports.ExecutaRoboArtwalkCommand;
-import br.com.robo.domain.ports.ProcuraBotaoComprarCommand;
+import br.com.robo.core.ports.ExecutaRoboArtwalkCommand;
+import br.com.robo.core.ports.ProcuraBotaoComprarCommand;
 
 import javax.inject.Inject;
 import javax.inject.Named;

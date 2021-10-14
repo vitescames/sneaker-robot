@@ -1,4 +1,4 @@
-package br.com.robo.external.entrypoint.rest.controller;
+package br.com.robo.application.rest.controller;
 
 import br.com.robo.adapters.entrypoint.ControllerInterface;
 import org.springframework.beans.factory.annotation.Autowired;

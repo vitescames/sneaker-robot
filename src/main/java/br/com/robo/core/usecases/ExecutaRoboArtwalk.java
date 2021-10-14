@@ -1,7 +1,7 @@
-package br.com.robo.domain.usecases;
+package br.com.robo.core.usecases;
 
-import br.com.robo.domain.ports.ArtwalkWebPageGateway;
-import br.com.robo.domain.ports.ExecutaRoboArtwalkCommand;
+import br.com.robo.core.ports.ArtwalkWebPageGateway;
+import br.com.robo.core.ports.ExecutaRoboArtwalkCommand;
 
 import javax.inject.Inject;
 import javax.inject.Named;

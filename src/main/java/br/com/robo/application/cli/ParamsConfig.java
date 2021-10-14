@@ -1,4 +1,4 @@
-package br.com.robo.external.entrypoint.cli;
+package br.com.robo.application.cli;
 
 import org.springframework.beans.factory.annotation.Value;
 
