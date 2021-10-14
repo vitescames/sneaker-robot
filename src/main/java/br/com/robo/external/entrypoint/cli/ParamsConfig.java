@@ -1,7 +1,6 @@
-package br.com.robo.config.entrypoint.cli;
+package br.com.robo.external.entrypoint.cli;
 
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Component;
 
 import javax.inject.Named;
 import java.util.HashMap;

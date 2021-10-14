@@ -1,4 +1,4 @@
-package br.com.robo.config.entrypoint.cli;
+package br.com.robo.external.entrypoint.cli;
 
 import br.com.robo.adapters.entrypoint.ControllerInterface;
 import org.springframework.beans.factory.BeanFactory;

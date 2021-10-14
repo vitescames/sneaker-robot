@@ -1,13 +1,7 @@
-package br.com.robo.config.dataprovider;
+package br.com.robo.external.dataprovider;
 
 
-import br.com.robo.adapters.dataprovider.ArtwalkGatewayImpl;
-import br.com.robo.adapters.dataprovider.service.*;
-import br.com.robo.domain.usecases.ProcuraBotaoComprar;
-import br.com.robo.domain.ports.ArtwalkWebPageGateway;
-import br.com.robo.domain.ports.ProcuraBotaoComprarCommand;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import javax.annotation.PostConstruct;

@@ -1,4 +1,4 @@
-package br.com.robo.config.entrypoint.cli;
+package br.com.robo.external.entrypoint.cli;
 
 import javax.inject.Named;
 

@@ -1,4 +1,4 @@
-package br.com.robo.config.entrypoint.rest;
+package br.com.robo.external.entrypoint.rest;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
