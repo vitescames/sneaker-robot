@@ -1,16 +1,14 @@
-package br.com.robo.adapters.entrypoint.cli;
+package br.com.robo.config.entrypoint.cli;
 
-import br.com.robo.adapters.entrypoint.cli.config.ControllerConfig;
-import br.com.robo.adapters.entrypoint.cli.config.ParamsConfig;
-import br.com.robo.adapters.entrypoint.controllers.ControllerInterface;
+import br.com.robo.adapters.entrypoint.ControllerInterface;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
+import javax.inject.Inject;
 import java.util.HashMap;
 
 @SpringBootApplication
@@ -21,10 +19,10 @@ public class MainStarter implements CommandLineRunner {
 
     private ControllerInterface controllerInterface;
 
-    @Autowired
+    @Inject
     private ControllerConfig controllerConfig;
 
-    @Autowired
+    @Inject
     private ParamsConfig paramsConfig;
 
     public static void main(String[] args) {

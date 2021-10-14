@@ -3,8 +3,10 @@ package br.com.robo.adapters.dataprovider.service;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
-import org.springframework.stereotype.Service;
 
+import javax.inject.Named;
+
+@Named
 public class AbreSiteService {
 
     public WebDriver abreSite(WebDriver webDriver, String url){

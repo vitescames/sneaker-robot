@@ -7,9 +7,11 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import javax.inject.Named;
 import java.io.File;
 import java.util.List;
 
+@Named
 public class RetiraElementosObscurersService {
 
     private static final Logger logger = LogManager.getLogger(IdentificaBotaoCompraService.class);

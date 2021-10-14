@@ -1,11 +1,12 @@
-package br.com.robo.adapters.entrypoint.cli.config;
+package br.com.robo.config.entrypoint.cli;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
+import javax.inject.Named;
 import java.util.HashMap;
 
-@Component
+@Named
 public class ParamsConfig {
 
     @Value("${url}")

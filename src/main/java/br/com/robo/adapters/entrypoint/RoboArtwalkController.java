@@ -1,19 +1,19 @@
-package br.com.robo.adapters.entrypoint.controllers;
+package br.com.robo.adapters.entrypoint;
 
 import br.com.robo.domain.ports.ExecutaRoboArtwalkCommand;
 import br.com.robo.domain.ports.ProcuraBotaoComprarCommand;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 
+import javax.inject.Inject;
+import javax.inject.Named;
 import java.util.HashMap;
 
-@Controller
+@Named("artwalk")
 public class RoboArtwalkController implements ControllerInterface {
 
-    @Autowired
+    @Inject
     private ExecutaRoboArtwalkCommand executaRoboCommand;
 
-    @Autowired
+    @Inject
     private ProcuraBotaoComprarCommand procuraBotaoComprarCommand;
 
     public void execute(HashMap<String, String> params) {

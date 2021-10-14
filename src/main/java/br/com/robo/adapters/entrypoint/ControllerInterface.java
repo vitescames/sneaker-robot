@@ -1,4 +1,4 @@
-package br.com.robo.adapters.entrypoint.controllers;
+package br.com.robo.adapters.entrypoint;
 
 import java.util.HashMap;
 

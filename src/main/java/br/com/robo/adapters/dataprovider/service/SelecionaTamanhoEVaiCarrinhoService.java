@@ -8,8 +8,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import javax.inject.Named;
 import java.util.List;
 
+@Named
 public class SelecionaTamanhoEVaiCarrinhoService {
 
     private static final Logger logger = LogManager.getLogger(IdentificaBotaoCompraService.class);

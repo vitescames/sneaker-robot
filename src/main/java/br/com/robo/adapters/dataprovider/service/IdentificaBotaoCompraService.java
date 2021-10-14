@@ -5,11 +5,12 @@ import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.springframework.stereotype.Component;
 
+import javax.inject.Named;
 import java.util.ArrayList;
 import java.util.List;
 
+@Named
 public class IdentificaBotaoCompraService {
 
     private static final Logger logger = LogManager.getLogger(IdentificaBotaoCompraService.class);

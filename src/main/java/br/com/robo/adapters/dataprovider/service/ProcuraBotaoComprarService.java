@@ -7,11 +7,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
-import org.springframework.stereotype.Component;
 
+import javax.inject.Named;
 import java.util.List;
 
-@Component
+@Named
 public class ProcuraBotaoComprarService {
 
     private static final Logger logger = LogManager.getLogger(ProcuraBotaoComprarService.class);

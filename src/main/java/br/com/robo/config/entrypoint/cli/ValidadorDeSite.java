@@ -1,8 +1,8 @@
-package br.com.robo.adapters.entrypoint.utils;
+package br.com.robo.config.entrypoint.cli;
 
-import org.springframework.stereotype.Component;
+import javax.inject.Named;
 
-@Component
+@Named
 public class ValidadorDeSite {
 
     public static String getRoboController(String url){

@@ -4,34 +4,34 @@ import br.com.robo.adapters.dataprovider.service.*;
 import br.com.robo.domain.ports.ArtwalkWebPageGateway;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
+import javax.inject.Inject;
+import javax.inject.Named;
 import java.util.HashMap;
 import java.util.List;
 
-@Service
+@Named
 public class ArtwalkGatewayImpl implements ArtwalkWebPageGateway {
 
-    @Autowired
+    @Inject
     private AbreSiteService abreSiteService;
 
-    @Autowired
+    @Inject
     private IdentificaBotaoCompraService identificaBotaoCompraService;
 
-    @Autowired
+    @Inject
     private RetiraElementosObscurersService retiraElementosObscurersService;
 
-    @Autowired
+    @Inject
     private SelecionaTamanhoEVaiCarrinhoService selecionaTamanhoECompraService;
 
-    @Autowired
+    @Inject
     private ProcuraBotaoComprarService procuraBotaoComprarService;
 
-    @Autowired
+    @Inject
     private FechaPedidoESetaEmailService fechaPedidoESetaEmailService;
 
-    @Autowired
+    @Inject
     private SetaInformacoesService setaInformacoesService;
 
     private WebDriver webDriver;

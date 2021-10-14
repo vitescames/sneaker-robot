@@ -2,15 +2,15 @@ package br.com.robo.domain.usecases;
 
 import br.com.robo.domain.ports.ArtwalkWebPageGateway;
 import br.com.robo.domain.ports.ExecutaRoboArtwalkCommand;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
+import javax.inject.Inject;
+import javax.inject.Named;
 import java.util.HashMap;
 
-@Component
+@Named
 public class ExecutaRoboArtwalk implements ExecutaRoboArtwalkCommand {
 
-    @Autowired
+    @Inject
     private ArtwalkWebPageGateway artwalkWebPageGateway;
 
     @Override
