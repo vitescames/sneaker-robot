@@ -1,4 +1,4 @@
-package br.com.robo.adapters.dataprovider.service;
+package br.com.robo.adapters.dataprovider.gateway.artwalkintegration.service;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.logging.log4j.LogManager;
@@ -25,7 +25,7 @@ public class RetiraElementosObscurersService {
             TakesScreenshot shot = (TakesScreenshot) webDriver;
 
             WebDriverWait wait = new WebDriverWait(webDriver, 3000);
-            wait.until(ExpectedConditions.elementToBeClickable(By.className("shoppush-prompt-close")));
+            wait.until(ExpectedConditions.elementToBeClickable(By.id("ModalAlterarLocalizacaoFechar")));
 
             File srcFile = shot.getScreenshotAs(OutputType.FILE);
 
@@ -33,11 +33,13 @@ public class RetiraElementosObscurersService {
 
             FileUtils.copyFile(srcFile, destFile);
 
-            List<WebElement> elementObscure = webDriver.findElements(By.className("shoppush-prompt-close"));
+            List<WebElement> elementObscure = webDriver.findElements(By.id("ModalAlterarLocalizacaoFechar"));
 
-            if (!elementObscure.isEmpty()) {
-                elementObscure.get(0).click();
+            if (elementObscure.isEmpty()) {
+                throw new RuntimeException("Botão de fechar modal não localizado");
             }
+
+            elementObscure.get(0).click();
 
             elementObscure = webDriver.findElements(By.className("acept-close"));
 

@@ -19,10 +19,8 @@ public class MainStarter implements CommandLineRunner {
 
     private static final Logger logger = LogManager.getLogger(MainStarter.class);
 
-    private ControllerInterface controllerInterface;
-
     @Inject
-    private ControllerConfig controllerConfig;
+    private ControllerInterface controllerInterface;
 
     @Inject
     private ParamsConfig paramsConfig;
@@ -39,7 +37,6 @@ public class MainStarter implements CommandLineRunner {
         HashMap<String, String> params = paramsConfig.execute();
 
         try{
-            controllerInterface = controllerConfig.retornaController(params.get("url"));
             controllerInterface.execute(params);
         } catch (Exception e){
             e.printStackTrace();

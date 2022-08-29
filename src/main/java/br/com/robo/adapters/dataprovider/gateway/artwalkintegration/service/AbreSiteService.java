@@ -1,4 +1,4 @@
-package br.com.robo.adapters.dataprovider.service;
+package br.com.robo.adapters.dataprovider.gateway.artwalkintegration.service;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;

@@ -1,4 +1,4 @@
-package br.com.robo.config;
+package br.com.robo.adapters.dataprovider.gateway.artwalkintegration.config;
 
 
 import org.springframework.beans.factory.annotation.Value;

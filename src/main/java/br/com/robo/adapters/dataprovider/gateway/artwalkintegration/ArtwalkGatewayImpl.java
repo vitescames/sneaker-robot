@@ -1,6 +1,6 @@
-package br.com.robo.adapters.dataprovider;
+package br.com.robo.adapters.dataprovider.gateway.artwalkintegration;
 
-import br.com.robo.adapters.dataprovider.service.*;
+import br.com.robo.adapters.dataprovider.gateway.artwalkintegration.service.*;
 import br.com.robo.core.ports.ArtwalkWebPageGateway;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

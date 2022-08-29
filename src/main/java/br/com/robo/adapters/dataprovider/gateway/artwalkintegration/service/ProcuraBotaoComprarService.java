@@ -1,4 +1,4 @@
-package br.com.robo.adapters.dataprovider.service;
+package br.com.robo.adapters.dataprovider.gateway.artwalkintegration.service;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

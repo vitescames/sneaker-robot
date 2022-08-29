@@ -13,13 +13,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class SneakerController {
 
     @Autowired
-    @Qualifier("artwalk")
     private ControllerInterface controller;
 
     @PostMapping
     public ResponseEntity<Object> buySneaker(){
         System.out.println("Rest controller");
-        //roboArtwalkController.execute(new HashMap<>());
         return null;
     }
 
